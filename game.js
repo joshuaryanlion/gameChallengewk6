@@ -44,7 +44,7 @@ let randomNumber = numQuote()
 let numAttempts = 5;
 
 const guessChecker = (ans) => {
-    if(actualAnswer.includes(ans.toUpperCase())) {
+    if(actualAnswer.includes(ans.toUpperCase()) && ans!== '') {
         return true
     }
 }
@@ -462,7 +462,7 @@ const intro = () => {
     const introMsg3 = () => {console.log(`The rules are simple...\n`)}
     const introMsg4 = () => {console.log(`Guess who said what...
 
-If you fail 3 times`)}
+If you fail 5 times`)}
     const introMsg5 = () => {console.log(`
 
     ██╗░░░██╗░█████╗░██╗░░░██╗  ██╗░░░░░░█████╗░░██████╗███████╗██╗██╗██╗██╗██╗██╗██╗
