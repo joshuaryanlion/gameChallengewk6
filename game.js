@@ -33,15 +33,16 @@ let quotes = {
 }
 
 let arr = Object.keys(quotes)
+let numAttempts = 5;
+let randomNumber
+let actualAnswer
+
+
 
 const numQuote = () => {
     let randomIndex = Math.floor(Math.random() * (arr.length))
     return arr[randomIndex]
 }
-
-let randomNumber = numQuote()
-
-let numAttempts = 5;
 
 const guessChecker = (ans) => {
     if(actualAnswer.includes(ans.toUpperCase()) && ans!== '') {
@@ -49,156 +50,10 @@ const guessChecker = (ans) => {
     }
 }
 
-let actualAnswer = quotes[randomNumber]
-// console.log(actualAnswer)
-// console.log(randomNumber)
-const askGuess = () => {
-    // console.log(arr)
-    // console.log(numAttempts)
-    if(numAttempts === 0){
-        const timeFail1 = () => {console.log("WOW you should maybe watch more game of thrones..... like alot more")}
-        const timeFail2 = () => {
-
-            console.log(`MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWWWWWWWWWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNXK0OkkxxddoooooodddxkkO0KXNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWXKOxdlc::;;;;;;;;;;;;;;;;;;;;::cldxOKXWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMMMMMMMMWWX0xoc:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:cox0XWMMMMMMMMMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMMMMMWNKkoc;;;;;;;;;;;;;;;::cccccccccc::;;;;;;;;;;;;;;;cokKNWMMMMMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMMWNKxl:;;;;;;;;;;:cloxkO00KKXXNNXXXXXK00Okxolc:;;;;;;;;;;:oxKNWMMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMWXOo:;;;;;;;;;:ldk0XNWMMMMMMMMMMMMMMMMMMMMMWWNX0kdl:;;;;;;;;;:oOXWMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMWKxl;;;;;;;;:ldOKNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNKOdc:;;;;;;;:lxKWMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMWXxc;;;;;;;;cdOXWMMMMMMMMMMMMMMMMMMMMMMMMWWNXKOkkKWMMMMMMWXOdc;;;;;;;;cxXWMMMMMMMMMMMMM
-            MMMMMMMMMMMWNkl;;;;;;;:okXWMMMMMMMMMMMMMMMMMMWWWNKK0Okdolc:;;;dNMMMMMMMMMWXko:;;;;;;;lkXWMMMMMMMMMMM
-            MMMMMMMMMMW0o:;;;;;;:d0NMMMMMMMMMMMMMMWWNXK0kxdol:::;;;;;;;;;;cOWMMMMMMMMMMMN0o:;;;;;;:o0WMMMMMMMMMM
-            MMMMMMMMWNkc;;;;;;:o0NWMMMMMMMMWWNX0Okdolc:;;;;;;;;;;;;;;;;;;;;dXMMMMMMMMMMMMWN0o:;;;;;;ckNMMMMMMMMM
-            MMMMMMMWXd:;;;;;;ckNWMMWWNXK0kxdol::;;;;;;;;;;;;;;;;;;;;;;;;;;;cOWMMMMMMMMMMMMMWNkl;;;;;;:dXWMMMMMMM
-            MMMMMMWKo;;;;;;:oKWMMMWOolc:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;oXMMMMMMMMMMMMMMMWKd:;;;;;;oKWMMMMMM
-            MMMMMWKo;;;;;;:xXWMMMMWO:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:l0WMMMMMMMMMMMMMMMWXx:;;;;;;oKWMMMMM
-            MMMMMXo;;;;;;ckNMMMMMMMXo;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::codxkOKXWMMMMMMMMMMMMMMMMMMNkc;;;;;;oXMMMMM
-            MMMMNx:;;;;;:kNMMMMMMMMWOc;;;;;;;;;;;;;;;;;;;;;:cllodkO0KNWWMMMMMMMMMMMMMMMMMMMMMMMMMNk:;;;;;:xNMMMM
-            MMMWOc;;;;;:xNMMMMMMMMMMXd;;;;;;;;;;;;;;:codxkOKXNWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNx:;;;;;cOWMMM
-            MMWKo;;;;;;oXMMMMMMMMMMMWOc;;;;;;;;;;;;;l0NWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXo;;;;;;oKMMM
-            MMWk:;;;;;cOWMMMMMMMMMMMMNd;;;;;;;;;;;;;cOWMMMMMMMMMMMMMMMWWNNWMMMMMMMMMMMMMMMMMMMMMMMMWOc;;;;;:kWMM
-            MMXo;;;;;;dXMMMMMMMMMMMMMW0l;;;;;;;;;;;;;oXMMMMMMMMWWNXKOkxdlo0WMMMMMMMMMMMMMMMMMMMMMMMMXd;;;;;;oXMM
-            MW0c;;;;;:kWMMMMMMMMMMMMMMNx:;;;;;;;;;;;;:kNNXK0Oxxdolc:;;;;;;dNMMMMMMMMMMMMMMMMMMMMMMMMWk:;;;;;c0WM
-            MWk:;;;;;l0WMMMMMMMMMMMMMMW0l;;;;;;;;;;;;;colc:;;;;;;;;;;;;;;;cOWMMMMMMMMMMMMMMMMMMMMMMMW0l;;;;;:kWM
-            MNx;;;;;;oXMMMMMMMMMMMMMMMMNx:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;dXMMMMMMMMMMMMMMMMMMMMMMMMXo;;;;;:xNM
-            MNd;;;;;;oXMMMMMMMMMMMMMMMMWKl;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;cOWMMMMMMMMMMMMMMMMMMMMMMMXo;;;;;;xNM
-            MNx;;;;;;oXMMMMMMMMMMMMMMMMMWk:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;oXMMMMMMMMMMMMMMMMMMMMMMMXo;;;;;;xNM
-            MNx:;;;;;lKWMMMMMMMMMMMMMMMMMKo;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:clokXMMMMMMMMMMMMMMMMMMMMMMWKl;;;;;:xNM
-            MWOc;;;;;cOWMMMMMMMMMMMMMMMMMWk:;;;;;;;;;;;;;;;;;;;;::lodxkOKXNWMMMMMMMMMMMMMMMMMMMMMMMMWOc;;;;;cOWM
-            MWKl;;;;;:xNMMMMMMMMMMMMMMMMMWXo;;;;;;;;;;;;;;codkkO0KNWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNx:;;;;;lKWM
-            MMNx;;;;;;lKWMMMMMMMMMMMMMMMMMWOc;;;;;;;;;;;;;oXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKl;;;;;;xNMM
-            MMW0c;;;;;:xNMMMMMMMMMMMMMMMMMMXd;;;;;;;;;;;;;cOWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNx:;;;;;c0WMM
-            MMMNx:;;;;;cOWMMMMMMMMMMMMMMMMMWOc;;;;;;;;;;;;;dXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWOc;;;;;:xNMMM
-            MMMWKl;;;;;;lKWMMMMMMMMMMMMMMMMMNd;;;;;;;;;;;;;cOWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKl;;;;;;lKWMMM
-            MMMMWOc;;;;;;oKWMMMMMMMMMMMMMMMMW0c;;;;;;;;;;;;;oXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKo;;;;;;cOWMMMM
-            MMMMMNkc;;;;;;o0WMMMMMMMMMMMMMMMMNx:;;;;;;;;;;;;:ONWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0o;;;;;;ckNMMMMM
-            MMMMMMNkc;;;;;;lONMMMMMMMMMMMMMMMW0l;;;;;;;;;;;;;oOKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNOl;;;;;;ckNMMMMMM
-            MMMMMMMNOc;;;;;;cxXWMMMMMMMMMMMMMMNx:;;;;;;;;;;;;:ckNMMMMMMMMMMMMMMMMMMMMMMMMMMMWXxc;;;;;;cONMMMMMMM
-            MMMMMMMMW0l;;;;;;;lONWMMMMMMMMMMMMWKl;;;;;;;;;;;;;;lKWMMMMMMMMMMMMMMMMMMMMMMMMWNOl;;;;;;;l0WMMMMMMMM
-            MMMMMMMMMWKd:;;;;;;:o0NMMMMMMMMMMMMNk:;;;;;;;;;;;;;:kWMMMMMMMMMMMMMMMMMMMMMMWN0o:;;;;;;:dKWMMMMMMMMM
-            MMMMMMMMMMMNOl;;;;;;;:oONWMMMMMMMMMWKo;;;;;;;:cldxxkKWMMMMMMMMMMMMMMMMMMMMWNOo:;;;;;;;lONMMMMMMMMMMM
-            MMMMMMMMMMMMWXkc;;;;;;;:lxKNWMMMMMMMWOllodxO0KXNWMMMMMMMMMMMMMMMMMMMMMMMNKxl:;;;;;;;ckXWMMMMMMMMMMMM
-            MMMMMMMMMMMMMMWKxc;;;;;;;;:ok0NWMMMMMWXNWWMMMMMMMMMMMMMMMMMMMMMMMMMMWNKko:;;;;;;;;cxKWMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMWXkl:;;;;;;;;:ldOKNWWMMMMMMMMMMMMMMMMMMMMMMMMMMWWNKOdl:;;;;;;;;:lkXWMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMWN0dc;;;;;;;;;;:loxk0KXNWWWWMMMMMMMMMWWWNXK0kxol:;;;;;;;;;;cd0NWMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMMMMWXOdl:;;;;;;;;;;;;:cloddxxkkkkkkxxddolc::;;;;;;;;;;;:cdOXWMMMMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMMMMMMMWX0xoc;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:cox0XWMMMMMMMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMMMMMMMMMMWWX0kdlc:;;;;;;;;;;;;;;;;;;;;;;;;;;;;:cldk0XWMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNX0Okxdolcc::::;;;;::::cclodxkO0XNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWWNXXKK00000000KKXXNWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM`)
-
-        }
-        setTimeout(() => {timeFail1()}, 1000)
-        setTimeout(() => {
-            timeFail2()
-           }, 3000,rl.close())
 
 
-
-
-    } else {
-    rl.question(`What character said this line: ${randomNumber}\?
-
-    Was it A) Cersei Lannister ..
-
-    Was it B) Tyrion Lannister..
-
-    Was it C) Sandor Clegane..
-
-    Was it D) Jorah Mormont..
-
-    Was it E) Daenarys Targaryn..
-
-    Was it F) Petyr Baelish..
-
-    Was it G) Lord Varys..
-
-    Your answer >`, answer => {
-        if (guessChecker(answer)) {
-            // arr.splice(arr.indexOf(randomNumber), 1)
-            setTimeout(() => {ifRight(randomNumber)}, 1500)
-        } else {
-            numAttempts--
-            // console.log(numAttempts)
-            console.log("You know nothing Jon Snow\n\n")
-            console.log(`You have ${numAttempts} attempts left!`)
-            setTimeout(() => {
-                askGuess()
-              }, 1500)
-        }
-    })
-}
-}
-
-const ifRight = (numToSplice) => {
-
-    // console.log(numAttempts)
-    if(arr.length === 1){
-        endGame()
-    } else {
-
-    arr.splice(arr.indexOf(numToSplice), 1)
-    // console.log(arr)
-    randomNumber = numQuote();
-    actualAnswer = quotes[randomNumber]
-    rl.question(`What character said this line: ${randomNumber}\?
-
-    Was it A) Cersei Lannister ..
-
-    Was it B) Tyrion Lannister..
-
-    Was it C) Sandor Clegane..
-
-    Was it D) Jorah Mormont..
-
-    Was it E) Daenarys Targaryn..
-
-    Was it F) Petyr Baelish..
-
-    Was it G) Lord Varys..
-
-    Your answer >`, balls => {
-        if (guessChecker(balls)) {
-            console.log("Correct!")
-            setTimeout(() => {ifRight(randomNumber)}, 1100)
-        }
-         else {
-            numAttempts--
-            // console.log(numAttempts)
-            console.log("You know nothing Jon Snow\n\n")
-            console.log(`You have ${numAttempts} left`)
-            setTimeout(() => {
-             askGuess()
-            }, 1100)
-        }
-})
-}
-}
 const endGame = () => {
-    console.log("Game of Thrones has bestowed upon you this profile, based off your results")
+    console.log("\nGame of Thrones has bestowed upon you this profile, based off your results\n\n")
     if(numAttempts === 1){
         console.log("Theon Greyjoy")
         console.log(`WWWWWX0koc,..,;cldxO0KXNNWWWWWWWWWWWWWWWWWWWKxkXWWWWNkdKWWWWWWWWWWWWWWWWWWWNK00Okdoc,..  .':ldOXWWWW
@@ -455,15 +310,120 @@ const endGame = () => {
         rl.close()
     }
 }
+const askGuess = () => {
+    // console.log(arr)
+    // console.log(numAttempts)
+    if(numAttempts === 0){
+        const timeFail1 = () => {console.log("WOW you should maybe watch more game of thrones..... like alot more\n\n\n")}
+        const timeFail2 = () => {
 
+            console.log(`MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWWWWWWWWWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNXK0OkkxxddoooooodddxkkO0KXNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWXKOxdlc::;;;;;;;;;;;;;;;;;;;;::cldxOKXWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMMMMMMMMWWX0xoc:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:cox0XWMMMMMMMMMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMMMMMWNKkoc;;;;;;;;;;;;;;;::cccccccccc::;;;;;;;;;;;;;;;cokKNWMMMMMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMMWNKxl:;;;;;;;;;;:cloxkO00KKXXNNXXXXXK00Okxolc:;;;;;;;;;;:oxKNWMMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMWXOo:;;;;;;;;;:ldk0XNWMMMMMMMMMMMMMMMMMMMMMWWNX0kdl:;;;;;;;;;:oOXWMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMWKxl;;;;;;;;:ldOKNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNKOdc:;;;;;;;:lxKWMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMWXxc;;;;;;;;cdOXWMMMMMMMMMMMMMMMMMMMMMMMMWWNXKOkkKWMMMMMMWXOdc;;;;;;;;cxXWMMMMMMMMMMMMM
+            MMMMMMMMMMMWNkl;;;;;;;:okXWMMMMMMMMMMMMMMMMMMWWWNKK0Okdolc:;;;dNMMMMMMMMMWXko:;;;;;;;lkXWMMMMMMMMMMM
+            MMMMMMMMMMW0o:;;;;;;:d0NMMMMMMMMMMMMMMWWNXK0kxdol:::;;;;;;;;;;cOWMMMMMMMMMMMN0o:;;;;;;:o0WMMMMMMMMMM
+            MMMMMMMMWNkc;;;;;;:o0NWMMMMMMMMWWNX0Okdolc:;;;;;;;;;;;;;;;;;;;;dXMMMMMMMMMMMMWN0o:;;;;;;ckNMMMMMMMMM
+            MMMMMMMWXd:;;;;;;ckNWMMWWNXK0kxdol::;;;;;;;;;;;;;;;;;;;;;;;;;;;cOWMMMMMMMMMMMMMWNkl;;;;;;:dXWMMMMMMM
+            MMMMMMWKo;;;;;;:oKWMMMWOolc:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;oXMMMMMMMMMMMMMMMWKd:;;;;;;oKWMMMMMM
+            MMMMMWKo;;;;;;:xXWMMMMWO:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:l0WMMMMMMMMMMMMMMMWXx:;;;;;;oKWMMMMM
+            MMMMMXo;;;;;;ckNMMMMMMMXo;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::codxkOKXWMMMMMMMMMMMMMMMMMMNkc;;;;;;oXMMMMM
+            MMMMNx:;;;;;:kNMMMMMMMMWOc;;;;;;;;;;;;;;;;;;;;;:cllodkO0KNWWMMMMMMMMMMMMMMMMMMMMMMMMMNk:;;;;;:xNMMMM
+            MMMWOc;;;;;:xNMMMMMMMMMMXd;;;;;;;;;;;;;;:codxkOKXNWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNx:;;;;;cOWMMM
+            MMWKo;;;;;;oXMMMMMMMMMMMWOc;;;;;;;;;;;;;l0NWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXo;;;;;;oKMMM
+            MMWk:;;;;;cOWMMMMMMMMMMMMNd;;;;;;;;;;;;;cOWMMMMMMMMMMMMMMMWWNNWMMMMMMMMMMMMMMMMMMMMMMMMWOc;;;;;:kWMM
+            MMXo;;;;;;dXMMMMMMMMMMMMMW0l;;;;;;;;;;;;;oXMMMMMMMMWWNXKOkxdlo0WMMMMMMMMMMMMMMMMMMMMMMMMXd;;;;;;oXMM
+            MW0c;;;;;:kWMMMMMMMMMMMMMMNx:;;;;;;;;;;;;:kNNXK0Oxxdolc:;;;;;;dNMMMMMMMMMMMMMMMMMMMMMMMMWk:;;;;;c0WM
+            MWk:;;;;;l0WMMMMMMMMMMMMMMW0l;;;;;;;;;;;;;colc:;;;;;;;;;;;;;;;cOWMMMMMMMMMMMMMMMMMMMMMMMW0l;;;;;:kWM
+            MNx;;;;;;oXMMMMMMMMMMMMMMMMNx:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;dXMMMMMMMMMMMMMMMMMMMMMMMMXo;;;;;:xNM
+            MNd;;;;;;oXMMMMMMMMMMMMMMMMWKl;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;cOWMMMMMMMMMMMMMMMMMMMMMMMXo;;;;;;xNM
+            MNx;;;;;;oXMMMMMMMMMMMMMMMMMWk:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;oXMMMMMMMMMMMMMMMMMMMMMMMXo;;;;;;xNM
+            MNx:;;;;;lKWMMMMMMMMMMMMMMMMMKo;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:clokXMMMMMMMMMMMMMMMMMMMMMMWKl;;;;;:xNM
+            MWOc;;;;;cOWMMMMMMMMMMMMMMMMMWk:;;;;;;;;;;;;;;;;;;;;::lodxkOKXNWMMMMMMMMMMMMMMMMMMMMMMMMWOc;;;;;cOWM
+            MWKl;;;;;:xNMMMMMMMMMMMMMMMMMWXo;;;;;;;;;;;;;;codkkO0KNWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNx:;;;;;lKWM
+            MMNx;;;;;;lKWMMMMMMMMMMMMMMMMMWOc;;;;;;;;;;;;;oXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKl;;;;;;xNMM
+            MMW0c;;;;;:xNMMMMMMMMMMMMMMMMMMXd;;;;;;;;;;;;;cOWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNx:;;;;;c0WMM
+            MMMNx:;;;;;cOWMMMMMMMMMMMMMMMMMWOc;;;;;;;;;;;;;dXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWOc;;;;;:xNMMM
+            MMMWKl;;;;;;lKWMMMMMMMMMMMMMMMMMNd;;;;;;;;;;;;;cOWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKl;;;;;;lKWMMM
+            MMMMWOc;;;;;;oKWMMMMMMMMMMMMMMMMW0c;;;;;;;;;;;;;oXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKo;;;;;;cOWMMMM
+            MMMMMNkc;;;;;;o0WMMMMMMMMMMMMMMMMNx:;;;;;;;;;;;;:ONWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0o;;;;;;ckNMMMMM
+            MMMMMMNkc;;;;;;lONMMMMMMMMMMMMMMMW0l;;;;;;;;;;;;;oOKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNOl;;;;;;ckNMMMMMM
+            MMMMMMMNOc;;;;;;cxXWMMMMMMMMMMMMMMNx:;;;;;;;;;;;;:ckNMMMMMMMMMMMMMMMMMMMMMMMMMMMWXxc;;;;;;cONMMMMMMM
+            MMMMMMMMW0l;;;;;;;lONWMMMMMMMMMMMMWKl;;;;;;;;;;;;;;lKWMMMMMMMMMMMMMMMMMMMMMMMMWNOl;;;;;;;l0WMMMMMMMM
+            MMMMMMMMMWKd:;;;;;;:o0NMMMMMMMMMMMMNk:;;;;;;;;;;;;;:kWMMMMMMMMMMMMMMMMMMMMMMWN0o:;;;;;;:dKWMMMMMMMMM
+            MMMMMMMMMMMNOl;;;;;;;:oONWMMMMMMMMMWKo;;;;;;;:cldxxkKWMMMMMMMMMMMMMMMMMMMMWNOo:;;;;;;;lONMMMMMMMMMMM
+            MMMMMMMMMMMMWXkc;;;;;;;:lxKNWMMMMMMMWOllodxO0KXNWMMMMMMMMMMMMMMMMMMMMMMMNKxl:;;;;;;;ckXWMMMMMMMMMMMM
+            MMMMMMMMMMMMMMWKxc;;;;;;;;:ok0NWMMMMMWXNWWMMMMMMMMMMMMMMMMMMMMMMMMMMWNKko:;;;;;;;;cxKWMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMWXkl:;;;;;;;;:ldOKNWWMMMMMMMMMMMMMMMMMMMMMMMMMMWWNKOdl:;;;;;;;;:lkXWMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMWN0dc;;;;;;;;;;:loxk0KXNWWWWMMMMMMMMMWWWNXK0kxol:;;;;;;;;;;cd0NWMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMMMMWXOdl:;;;;;;;;;;;;:cloddxxkkkkkkxxddolc::;;;;;;;;;;;:cdOXWMMMMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMMMMMMMWX0xoc;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:cox0XWMMMMMMMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMMMMMMMMMMWWX0kdlc:;;;;;;;;;;;;;;;;;;;;;;;;;;;;:cldk0XWMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNX0Okxdolcc::::;;;;::::cclodxkO0XNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWWNXXKK00000000KKXXNWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+            MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM`)
+
+        }
+        setTimeout(() => {timeFail1()}, 1000)
+        setTimeout(() => {
+            timeFail2()
+           }, 3000,rl.close())
+
+
+
+
+    } else if (arr.length ===1) {
+        endGame()
+    } else {
+    randomNumber = numQuote();
+    actualAnswer = quotes[randomNumber]
+    rl.question(`What character said this line: ${randomNumber}\?
+
+    Was it A) Cersei Lannister ..
+
+    Was it B) Tyrion Lannister..
+
+    Was it C) Sandor Clegane..
+
+    Was it D) Jorah Mormont..
+
+    Was it E) Daenarys Targaryn..
+
+    Was it F) Petyr Baelish..
+
+    Was it G) Lord Varys..
+
+    Your answer must be A - B>   `, answer => {
+        if (guessChecker(answer)) {
+            arr.splice(arr.indexOf(randomNumber), 1)
+            console.log(`\n    Correct!\n`)
+            setTimeout(() => {askGuess(randomNumber)}, 1500)
+        } else {
+            numAttempts--
+            // console.log(numAttempts)
+            const wrongLine1 = () =>{console.log(`\n\n    You know nothing Jon Snow\n\n`)}
+            const wrongLine2 = () =>{console.log(`    You have ${numAttempts} attempts left!\n\n`)}
+            setTimeout(() => {wrongLine1()}, 1000)
+            setTimeout(() => {wrongLine2()}, 3000)
+            setTimeout(() => {
+                askGuess()
+              }, 5000)
+        }
+    })
+}
+}
 const intro = () => {
     const introMsg1 = () => {console.log("Welcome\n")}
     const introMsg2 = () => {console.log("To Game of Thrones trivia!!\n")}
     const introMsg3 = () => {console.log(`The rules are simple...\n`)}
-    const introMsg4 = () => {console.log(`Guess who said what...
-
-If you fail 5 times`)}
-    const introMsg5 = () => {console.log(`
+    const introMsg4 = () => {console.log(`Guess who said what...\n`)}
+    const introMsg5 = () => {console.log(`If you fail 5 times...\n`)}
+    const introMsg6 = () => {console.log(`
 
     ██╗░░░██╗░█████╗░██╗░░░██╗  ██╗░░░░░░█████╗░░██████╗███████╗██╗██╗██╗██╗██╗██╗██╗
     ╚██╗░██╔╝██╔══██╗██║░░░██║  ██║░░░░░██╔══██╗██╔════╝██╔════╝██║██║██║██║██║██║██║
@@ -471,15 +431,15 @@ If you fail 5 times`)}
     ░░╚██╔╝░░██║░░██║██║░░░██║  ██║░░░░░██║░░██║░╚═══██╗██╔══╝░░╚═╝╚═╝╚═╝╚═╝╚═╝╚═╝╚═╝
     ░░░██║░░░╚█████╔╝╚██████╔╝  ███████╗╚█████╔╝██████╔╝███████╗██╗██╗██╗██╗██╗██╗██╗
     ░░░╚═╝░░░░╚════╝░░╚═════╝░  ╚══════╝░╚════╝░╚═════╝░╚══════╝╚═╝╚═╝╚═╝╚═╝╚═╝╚═╝╚═╝\n`)}
-    const introMsg6 = () => {console.log("Lets begin\n")}
+    const introMsg7 = () => {console.log("Lets begin\n")}
     setTimeout(() => {introMsg1()}, 500)
     setTimeout(() => {introMsg2()}, 1000)
     setTimeout(() => {introMsg3()}, 3000)
     setTimeout(() => {introMsg4()}, 5000)
     setTimeout(() => {introMsg5()}, 7000)
     setTimeout(() => {introMsg6()}, 9000)
-    setTimeout(() => {askGuess()}, 11000)
+    setTimeout(() => {introMsg7()}, 11000)
+    setTimeout(() => {askGuess()}, 12000)
 }
-
 
 intro()
