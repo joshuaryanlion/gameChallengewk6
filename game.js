@@ -36,6 +36,7 @@ let arr = Object.keys(quotes)
 let numAttempts = 5;
 let randomNumber
 let actualAnswer
+let points = 0;
 
 
 
@@ -398,10 +399,12 @@ const askGuess = () => {
 
     Was it G) Lord Varys..
 
-    Your answer must be A - B>   `, answer => {
+    Your answer must be A - G>   `, answer => {
         if (guessChecker(answer)) {
             arr.splice(arr.indexOf(randomNumber), 1)
-            console.log(`\n    Correct!\n`)
+            points++
+            console.log(`\n    Correct! you have ${points} points\n`)
+            
             setTimeout(() => {askGuess(randomNumber)}, 1500)
         } else {
             numAttempts--
