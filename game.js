@@ -41,7 +41,7 @@ const numQuote = () => {
 
 let randomNumber = numQuote()
 
-let numAttempts = 3;
+let numAttempts = 5;
 
 const guessChecker = (ans) => {
     if(actualAnswer.includes(ans.toUpperCase())) {
